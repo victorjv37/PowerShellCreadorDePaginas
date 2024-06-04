@@ -9,8 +9,8 @@ begin {
 
   # Page parameters
   $pageParams = @{
-    Name             = "236_029_00_lan_telefonica"
-    Title            = "236_029_00_lan_telefonica"
+    Name             = "conector de lantelefonica"
+    Title            = "236_029_00_lan_telefonica12"
     HeaderLayoutType = "FullWidthImage"
   }
 }
@@ -44,10 +44,45 @@ process {
   $newPage.Save()
   $newPage = Get-PnPPage $pageParams.Name
 
-  # Cargar el JSON desde el archivo
+  # Conectar a SharePoint
+  try {
+    Connect-PnPOnline "https://tejiendored.sharepoint.com/sites/test2" -Interactive
+  }
+  catch {
+    Write-Host "Error connecting to SharePoint site. Please check the Tenant and Site parameters." -ForegroundColor Red
+    exit
+  }
+
+  # Obtener la navegación lateral
+  $navigation = Get-PnPNavigationNode -Location "QuickLaunch"
+
+  # Función para eliminar un nodo por título
+  function Remove-NavigationNodeByTitle {
+    param (
+      [string]$title
+    )
+    $node = $navigation | Where-Object { $_.Title -eq $title }
+    if ($node) {
+      Remove-PnPNavigationNode -Identity $node.Id -Force
+    }
+  }
+
+  # Obtener la navegación lateral y eliminar todos los nodos existentes
+  Write-Host "Removing all existing navigation nodes..."
+  $navigationNodes = Get-PnPNavigationNode -Location "QuickLaunch"
+  foreach ($node in $navigationNodes) {
+    Remove-PnPNavigationNode -Identity $node.Id -Force
+  }
+
+  # Añadir nuevos enlaces personalizados
+  Add-PnPNavigationNode -Title "236_029_00_lan_telefonica" -Url "/sites/test2/SitePages/236_029_00_lan_telefonica.aspx" -Location "QuickLaunch"
+
+  Write-Host "Navigation updated successfully." -ForegroundColor Green
+  
+  # Load JSON from file
   $jsonContent = Get-Content -Path "C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\JSONS MIGRACION INTRANET\TELEFONICA\236_029_00_lan_telefonica_json.txt" -Raw | ConvertFrom-Json
 
-  # Función para obtener el estilo CSS según el tipo
+  # Function to get CSS style based on type
   function Get-Style {
     param ($tipo)
     switch ($tipo) {
@@ -56,20 +91,40 @@ process {
       "procedimiento" { return "background-color: lightblue;" }
       "configuracion_herramientas" { return "background-color: lightcoral;" }
       "recursos_documentacion" { return "background-color: lightgray;" }
-      "SLAs" { return "background-color: coral;" }
+      "SLAs" {
+        return "background-color: black;" 
+      }
       default { return "" }
     }
   }
 
   Write-Host "Adding sections from JSON..."
   $order = 1
+
+  # Add a left column section for links to other pages
+  Write-Host "Adding a left section with links..."
+  $newPage | Add-PnPPageSection -SectionTemplate TwoColumn -Order $order -ZoneEmphasis 2
+
+  # Links to other pages
+  $linksHtml = @"
+<div>
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href='/sites/test2/SitePages/236_029_00_lan_telefonica.aspx'>236_029_00_lan_telefonica.aspx</a></li>
+  </ul>
+</div>
+"@
+
+  # Add links to the left column
+  $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $linksHtml
+
   foreach ($item in $jsonContent) {
     $titulo = $item.titulo
     $texto = $item.texto
     $tipo = $item.tipo
     $style = Get-Style -tipo $tipo
 
-    # Crear contenido HTML para esta sección
+    # Create HTML content for this section
     $htmlContent = @"
 <div style='$style'>
   <h3>$titulo</h3>
@@ -77,9 +132,9 @@ process {
 </div>
 "@
 
-    # Añadir una nueva sección a la página y agregar el contenido HTML
-    $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order $order
-    $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $htmlContent
+    # Add a new section to the page and add the HTML content
+    $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order ($order + 1) -ZoneEmphasis 2
+    $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section ($order + 1) -Text $htmlContent
     $order++
   }
 
