@@ -23,18 +23,20 @@ catch {
 
 # Remove existing navigation nodes for pages containing "236"
 Write-Host "Removing existing navigation nodes for pages containing '236'..."
-foreach ($page in $pages) {
-    try {
+try {
+    $navigationNodes = Get-PnPNavigationNode -Location "QuickLaunch"
+    foreach ($page in $pages) {
         $pageTitle = $page.FieldValues.FileLeafRef
-        $navigationNodes = Get-PnPNavigationNode -Location "QuickLaunch" | Where-Object { $_.Title -eq $pageTitle }
-        foreach ($node in $navigationNodes) {
+        $pageNodes = $navigationNodes | Where-Object { $_.Title -eq $pageTitle }
+        foreach ($node in $pageNodes) {
             Remove-PnPNavigationNode -Identity $node.Id -Force
         }
         Write-Host "Removed navigation nodes for page: $($pageTitle)" -ForegroundColor Green
     }
-    catch {
-        Write-Host "Error removing navigation nodes for page: $($pageTitle): $_" -ForegroundColor Red
-    }
+}
+catch {
+    Write-Host "Error removing navigation nodes: $_" -ForegroundColor Red
+    exit
 }
 
 # Add new custom links for pages containing "236"
