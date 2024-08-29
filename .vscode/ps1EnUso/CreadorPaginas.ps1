@@ -1,138 +1,119 @@
-begin {
-  try {
-    Connect-PnPOnline "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA" -Interactive
-  }
-  catch {
-    Write-Host "Error connecting to SharePoint site. Please check the Tenant and Site parameters." -ForegroundColor Red
-    exit
-  }
+# Variables de configuración
+$targetSiteUrl = "https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA" # URL del sitio donde se crearán las páginas
+$wikiUrl = "https://grupoplexus.sharepoint.com/sites/wiki" # URL del sitio concentrador para la lista 'proyectos'
+$listNameProyectos = "Proyectos"
+$jsonFolderPath = "C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PROYECTO_WIKI\JSONS\1226- Aguas de Coruña (EMALCSA)"
+$cliente = "1226-AguasdeCoruaEMALCSA"
 
-  # Page parameters
-  $pageParams = @{
-    Name             = "PRUEBA"
-    Title            = "PRUEBA"
-    HeaderLayoutType = "FullWidthImage"
-  }
-}
+# Conectar al sitio donde se crearán las páginas
+Connect-PnPOnline -Url $targetSiteUrl -Interactive
 
-process {
-  try {
-    Write-Host "Adding new page..." -ForegroundColor Green
-    $newPage = Add-PnPPage @pageParams -ErrorAction Stop
-    Write-Host "Page added successfully: $($newPage.Name)" -ForegroundColor Green
-  }
-  catch {
-    Write-Host "Error adding new page: $_" -ForegroundColor Red
-    exit
-  }
+# Procesar archivos y carpetas en la carpeta principal
+$items = Get-ChildItem -Path $jsonFolderPath
 
-  # Load JSON from file
-  $jsonContent = Get-Content -Path "C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PROYECTO_WIKI\JSONS\884-Mutua-Gallega\PRUEBA.txt" -Raw | ConvertFrom-Json
+foreach ($item in $items) {
+  if ($item.PSIsContainer) {
+    $folderName = $item.Name
+    $mainPageName = $folderName
 
-  # Function to get CSS style based on type
-  function Get-Style {
-    param ($tipo)
-    switch ($tipo) {
-      "nota_importante" { return "background-color: #FFFFCC !important; border-radius: 15px !important; padding: 10px !important;" }
-      "contacto_comunicacion" { return "border-radius: 15px !important; padding: 10px !important;" }
-      "procedimiento" { return "border-radius: 15px !important; padding: 10px !important;" }
-      "configuracion_herramientas" { return "border-radius: 15px !important; padding: 10px !important;" }
-      "recursos_documentacion" { return "border-radius: 15px !important; padding: 10px !important;" }
-      "SLA's" {
-        return "background-color: rgb(215, 219, 255) !important; border-radius: 15px !important; padding: 10px !important;" 
+    $existingPage = Get-PnPPage -Identity "$mainPageName.aspx" -ErrorAction SilentlyContinue
+    if ($null -eq $existingPage) {
+      $pageParams = @{
+        Name             = $mainPageName
+        Title            = $mainPageName
+        HeaderLayoutType = "FullWidthImage"
       }
-      default { return "" }
+
+      Write-Host "Creating empty page for folder: $folderName" -ForegroundColor Green
+      $mainPage = Add-PnPPage @pageParams -ErrorAction Stop
+      Write-Host "Empty page created: $($mainPage.Name)" -ForegroundColor Green
+
+      Write-Host "Publishing empty page and promoting as News..." -ForegroundColor Green
+      $mainPage | Set-PnPPage -PromoteAs NewsArticle -Publish
+    }
+    else {
+      Write-Host "Page $mainPageName already exists. Skipping creation." -ForegroundColor Yellow
     }
   }
+  else {
+    $pageName = [System.IO.Path]::GetFileNameWithoutExtension($item.Name)
 
-  Write-Host "Adding sections from JSON..."
-  $order = 1
+    $existingPage = Get-PnPPage -Identity "$pageName.aspx" -ErrorAction SilentlyContinue
+    if ($null -eq $existingPage) {
+      $jsonContent = Get-Content -Path $item.FullName -Raw | ConvertFrom-Json
 
-  # Define the URL of the external CSS file
-  $externalCssUrl = "https://grupoplexus.sharepoint.com/:u:/r/sites/884-MUTUA-GALLEGA/Archivos%20de%20las%20pginas/misEstilos.css?csf=1&web=1&e=oU3EaT"
-
-  # Create the index section
-  function CreateIndexSection {
-    param ([array]$items)
-
-    $indexHtml = "<div id='indexSection'>"
-    $indexHtml += "<h2>Índice</h2><ul>"
-
-    foreach ($item in $items) {
-      $titulo = $item.titulo
-      if ($titulo) {
-        $titulolimpiado = $titulo.Tolower() -replace ' ', '-' 
-        $indexHtml += "<li><a href='#$titulolimpiado'>$titulo</a></li>"
+      $pageParams = @{
+        Name             = $pageName
+        Title            = $pageName
+        HeaderLayoutType = "FullWidthImage"
       }
-    }
 
-    $indexHtml += "</ul></div>"
-    return $indexHtml
-  }
-  
-  # Add the CSS link as the first content of the page
-  try {
-    $cssLinkHtml = "<a rel='stylesheet' type='text/css' href='$externalCssUrl'></a>"
-    $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order $order -ZoneEmphasis 3
-    $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $cssLinkHtml
-  }
-  catch {
-    Write-Host "Error adding CSS link: $_" -ForegroundColor Red
-    exit
-  }
-  $order++
+      Write-Host "Adding new page: $pageName" -ForegroundColor Green
+      $newPage = Add-PnPPage @pageParams -ErrorAction Stop
 
-  # Add the index section
-  try {
-    $indexHtml = CreateIndexSection -items $jsonContent
-    $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order $order -ZoneEmphasis 3
-    $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $indexHtml
-  }
-  catch {
-    Write-Host "Error adding index section: $_" -ForegroundColor Red
-    exit
-  }
-  $order++
+      $order = 1
+      foreach ($section in $jsonContent) {
+        $titulo = $section.titulo
+        $texto = $section.texto
 
-  $sectionCounter = 1
-
-  foreach ($item in $jsonContent) {
-    $titulo = $item.titulo
-    $texto = $item.texto
-    $tipo = $item.tipo
-    $style = Get-Style -tipo $tipo
-
-    # Create HTML content for this section
-    $htmlContent = @"
-<div id='section' style='$style'>
+        $htmlContent = @"
+<div id='section'>
   <h4>$titulo</h4>
   <div style='overflow-x: auto !important; font-size: 16px !important;'>$texto</div>
 </div>
 "@
 
-    try {
-      # Add a new section to the page and add the HTML content
-      $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order $order -ZoneEmphasis 2
-      $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $htmlContent
-    }
-    catch {
-      Write-Host "Error adding section for title '$titulo': $_" -ForegroundColor Red
-      exit
-    }
-    $order++
-    $sectionCounter++
-  }
+        try {
+          $newPage | Add-PnPPageSection -SectionTemplate OneColumn -Order $order -ZoneEmphasis 2
+          $newPage | Add-PnPPageTextPart -Order 1 -Column 1 -Section $order -Text $htmlContent
+        }
+        catch {
+          Write-Host "Error adding section for title '$titulo': $_" -ForegroundColor Red
+          exit
+        }
+        $order++
+      }
 
-  Write-Host "Publishing Page and promoting Page as News..."
-  try {
-    $newPage | Set-PnPPage -PromoteAs NewsArticle -Publish
-  }
-  catch {
-    Write-Host "Error publishing page: $_" -ForegroundColor Red
-    exit
+      Write-Host "Publishing page and promoting as News..." -ForegroundColor Green
+      $newPage | Set-PnPPage -PromoteAs NewsArticle -Publish
+    }
+    else {
+      Write-Host "Page $pageName already exists. Skipping creation." -ForegroundColor Yellow
+    }
   }
 }
 
-end {
-  Write-Host "Done! :)" -ForegroundColor Green
+# Conectar al sitio objetivo para obtener todas las páginas creadas
+Connect-PnPOnline -Url $targetSiteUrl -Interactive
+
+# Recopilar todas las páginas ya creadas desde la biblioteca SitePages
+Write-Host "Retrieving all pages from SitePages to update the 'proyectos' list..." -ForegroundColor Green
+$pages = Get-PnPListItem -List "SitePages" -Fields "FileLeafRef", "FileRef"
+
+# Conectar al sitio Wiki para actualizar la lista de proyectos
+Connect-PnPOnline -Url $wikiUrl -Interactive
+
+# Obtener el ID del cliente en la lista "LISTADO CLIENTES"
+$clienteItem = Get-PnPListItem -List "LISTADO CLIENTES" -Query "<View><Query><Where><Eq><FieldRef Name='Title'/><Value Type='Text'>$cliente</Value></Eq></Where></Query></View>"
+
+if ($null -ne $clienteItem) {
+  $clienteId = $clienteItem[0].Id
+
+  foreach ($page in $pages) {
+    $pageName = $page["FileLeafRef"]
+    # $pageUrl = $page["FileRef"]
+
+    Write-Host "Adding page: $pageName to the 'proyectos' list..." -ForegroundColor Green
+
+    Add-PnPListItem -List $listNameProyectos -Values @{
+      "Cliente"  = $clienteId; # Usar el ID en lugar del texto
+      "Proyecto" = $pageName;
+      "Link"     = "$targetSiteUrl$pageUrl"
+    }
+  }
 }
+else {
+  Write-Host "Error: El cliente '$cliente' no fue encontrado en la lista 'LISTADO CLIENTES'." -ForegroundColor Red
+}
+
+Write-Host "Done! :)" -ForegroundColor Green

@@ -1,5 +1,5 @@
 param(
-    [string]$SiteUrl = "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA"
+    [string]$SiteUrl = "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion"
 )
 
 # Conectar a SharePoint Online
@@ -39,10 +39,12 @@ catch {
 Write-Host "Adding main navigation nodes..."
 try {
     #Inicio
-    Add-PnPNavigationNode -Title "Inicio" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/Inicio.aspx" -Location "QuickLaunch"
-    $mainNodeProyectos = Add-PnPNavigationNode -Title "PROYECTOS" -Location "QuickLaunch" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/Inicio.aspx" 
-    $mainNodeEvolutivos = Add-PnPNavigationNode -Title "EVOLUTIVOS" -Location "QuickLaunch" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/Inicio.aspx"
-    $mainNodeSoluciones = Add-PnPNavigationNode -Title "SOLUCIONES" -Location "QuickLaunch" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/Inicio.aspx"
+    Add-PnPNavigationNode -Title "Inicio" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" -Location "QuickLaunch"
+    # Secciones generales
+    # Add-PnPNavigationNode -Title "898_correos_seccion_general" -Url "https://grupoplexus.sharepoint.com/sites/898-Correos/SitePages/898_correos_seccion_general.aspx" -Location "QuickLaunch" 
+    # Nodos grupales
+    $mainNodeProyectos = Add-PnPNavigationNode -Title "PROYECTOS" -Location "QuickLaunch" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" 
+    # $mainNodeEvolutivos = Add-PnPNavigationNode -Title "EVOLUTIVOS" -Location "QuickLaunch" -Url "https://grupoplexus.sharepoint.com/sites/898-Correos/SitePages/Inicio.aspx"
     Write-Host "Added main navigation nodes for 'PROYECTOS', 'EVOLUTIVOS', and 'SOLUCIONES'" -ForegroundColor Green
 }
 catch {
@@ -54,21 +56,12 @@ catch {
 Write-Host "Adding custom links to main nodes..."
 try {
     # Proyectos
-    $seccion13 = Add-PnPNavigationNode -Title "884-013-Mutua-Gallega-Fase-II-Quenda-Anblick" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/884-013-Mutua-Gallega-Fase-II-Quenda-Anblick(HW-SW)(L-V-8-20h-Except.-Fest-Nacio-y-Auto).aspx" -Location "QuickLaunch" -Parent $mainNodeProyectos.Id
-    Add-PnPNavigationNode -Title "1704_884_009_desarrollo" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_009_desarrollo.aspx" -Location "QuickLaunch" -Parent $seccion13.Id
-    Add-PnPNavigationNode -Title "1704_884_013_comun" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_013_comun.aspx" -Location "QuickLaunch" -Parent $seccion13.Id
-    Add-PnPNavigationNode -Title "1704_884_013_soporte" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_013_soporte.aspx" -Location "QuickLaunch" -Parent $seccion13.Id
-    $seccion14 = Add-PnPNavigationNode -Title "884-014---Mutua-Gallega-QM-Anblick" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/884-014---Mutua-Gallega-QM-Anblick(HW-SW)(L-V-8-20h-Except.-Fest.Nacio).aspx" -Location "QuickLaunch" -Parent $mainNodeProyectos.Id
-    Add-PnPNavigationNode -Title "1704_884_014_comun" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_014_comun.aspx" -Location "QuickLaunch" -Parent $seccion14.Id
-    Add-PnPNavigationNode -Title "1704_884_014_desarrollo" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_014_desarrollo.aspx" -Location "QuickLaunch" -Parent $seccion14.Id
-    Add-PnPNavigationNode -Title "1704_884_014_soporte" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_014_soporte.aspx" -Location "QuickLaunch" -Parent $seccion14.Id
-
+    $seccion13 = Add-PnPNavigationNode -Title "898-011-Correos-QuendaCita-previaAnblick2000H-Sop.Evol(247)" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" -Location "QuickLaunch" -Parent $mainNodeProyectos.Id
+    Add-PnPNavigationNode -Title "898_011_desarrollo" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" -Location "QuickLaunch" -Parent $seccion13.Id
+    Add-PnPNavigationNode -Title "898_011_comun" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" -Location "QuickLaunch" -Parent $seccion13.Id
+    Add-PnPNavigationNode -Title "898_011_soporte" -Url "https://tejiendored.sharepoint.com/sites/PruebaSitioComunicacion" -Location "QuickLaunch" -Parent $seccion13.Id
     # Evolutivos
-    Add-PnPNavigationNode -Title "1704_884_evolutivos" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_evolutivos.aspx" -Location "QuickLaunch" -Parent $mainNodeEvolutivos.Id
-
-    # Soluciones
-    Add-PnPNavigationNode -Title "1704_884_seccion_general_plantilla" -Url "https://grupoplexus.sharepoint.com/sites/884-MUTUA-GALLEGA/SitePages/1704_884_seccion_general.aspx" -Location "QuickLaunch" -Parent $mainNodeSoluciones.Id
-
+    # Add-PnPNavigationNode -Title "898_evolutivos" -Url "https://grupoplexus.sharepoint.com/sites/898-Correos/SitePages/898_evolutivos.aspx" -Location "QuickLaunch" -Parent $mainNodeEvolutivos.Id
     Write-Host "Added navigation links for pages." -ForegroundColor Green
 }
 catch {
