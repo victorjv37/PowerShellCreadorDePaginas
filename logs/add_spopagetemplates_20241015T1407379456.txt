@@ -1,0 +1,120 @@
+**********************
+PowerShell transcript start
+Start time: 20241015140737
+Username: PLEXUS\victor.jimenezvaquer
+RunAs User: PLEXUS\victor.jimenezvaquer
+Configuration Name: 
+Machine: PLX10520-028 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2024.2.2' -BundledModulesPath 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2024.2.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\logs\1728985320-b7bd9115-5105-4ca6-91c3-fb2b19d101811728985308299' -SessionDetailsPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-12764-737199.json' -FeatureFlags @() 
+Process ID: 20572
+PSVersion: 7.4.5
+PSEdition: Core
+GitCommitId: 7.4.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1407379456.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/898-Correos_
+
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {71eeaf17-8867-43d3-b8e8-a03ddee2f688, f5ada537-ba14-44b7-b5be-4052ccf94e51,
+                       d3a5171f-2306-4bcf-93da-69deea7e6236, b87fa64c-bebd-43c0-a090-12b66cc55ac6…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 23
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/898-Correos_
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {724ea932-6af7-4180-8430-7a527f4e430f, da6b0af4-cca7-49b1-8bdd-da35aaba58a9,
+                       9867045b-d36c-49f0-accd-ab54fdc008b7, dea52100-39f4-4a4b-aecb-0a990ff99a58…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 14
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+PS>TerminatingError(Get-PnPConnection): "The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect."
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:86:9
+Line |
+  86 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect.
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:86:9
+Line |
+  86 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline
+     | commands which uses the -Url argument to connect.
+
+**********************
+PowerShell transcript end
+End time: 20241015140826
+**********************

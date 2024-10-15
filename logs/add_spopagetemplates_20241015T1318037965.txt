@@ -1,0 +1,73 @@
+**********************
+PowerShell transcript start
+Start time: 20241015131803
+Username: PLEXUS\victor.jimenezvaquer
+RunAs User: PLEXUS\victor.jimenezvaquer
+Configuration Name: 
+Machine: PLX10520-028 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2024.2.2' -BundledModulesPath 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2024.2.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\logs\1728985320-b7bd9115-5105-4ca6-91c3-fb2b19d101811728985308299' -SessionDetailsPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-12764-234452.json' -FeatureFlags @() 
+Process ID: 8600
+PSVersion: 7.4.5
+PSEdition: Core
+GitCommitId: 7.4.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1318037965.txt
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 7
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1090-Adeslas
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/236-Telefonica
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388-HospitalUniversitarioSantJoandeReus_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1090-Adeslas
+
+PageTitle            : 
+Sections             : {}
+Controls             : {}
+HeaderControls       : {}
+LayoutType           : Article
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Plantillas
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 9
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Se produjo un error: 'Sections' is a ReadOnly property.
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 55
+at <ScriptBlock>, <No file>: line 1
+**********************
+PowerShell transcript end
+End time: 20241015131826
+**********************

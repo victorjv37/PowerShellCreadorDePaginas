@@ -1,0 +1,409 @@
+**********************
+PowerShell transcript start
+Start time: 20241015134724
+Username: PLEXUS\victor.jimenezvaquer
+RunAs User: PLEXUS\victor.jimenezvaquer
+Configuration Name: 
+Machine: PLX10520-028 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2024.2.2' -BundledModulesPath 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2024.2.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\logs\1728985320-b7bd9115-5105-4ca6-91c3-fb2b19d101811728985308299' -SessionDetailsPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-12764-737199.json' -FeatureFlags @() 
+Process ID: 20572
+PSVersion: 7.4.5
+PSEdition: Core
+GitCommitId: 7.4.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1347249169.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+WARNING: 
+A newer version of PnP PowerShell is available: 2.99.13-nightly.
+
+Use 'Update-Module -Name PnP.PowerShell' to update.
+Use 'Get-PnPChangeLog -Release 2.99.13-nightly' to list changes.
+
+You can turn this check off by setting the 'PNPPOWERSHELL_UPDATECHECK' environment variable to 'Off'.
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(Get-PnPConnection): "The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect."
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:67:9
+Line |
+  67 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect.
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1351008487.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+
+PageTitle            : 
+Sections             : {}
+Controls             : {}
+HeaderControls       : {}
+LayoutType           : Article
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 16
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1351087291.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+PS>TerminatingError(Add-PnPPage): "Acceso denegado."
+Se produjo un error: Acceso denegado.
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 46
+at <ScriptBlock>, <No file>: line 1
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1351087291.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1402396398.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {2c880d66-1c73-4eef-927a-42f44bca427f, 1cc971fe-e314-4d06-a78b-a7a620691504,
+                       3090c447-841f-4c6e-8a2d-ae9169741acf, 63d59130-9781-483b-a072-2b9acc1f67a8…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 18
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+PS>TerminatingError(Invoke-PnPSiteTemplate): "Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))"
+Se produjo un error: Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 56
+at <ScriptBlock>, <No file>: line 1
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1402396398.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1406186763.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+PS>TerminatingError(Invoke-PnPSiteTemplate): "Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))"
+Se produjo un error: Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 67
+at <ScriptBlock>, <No file>: line 1
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1406186763.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1407379456.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/898-Correos_
+
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {71eeaf17-8867-43d3-b8e8-a03ddee2f688, f5ada537-ba14-44b7-b5be-4052ccf94e51,
+                       d3a5171f-2306-4bcf-93da-69deea7e6236, b87fa64c-bebd-43c0-a090-12b66cc55ac6…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 23
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/898-Correos_
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {724ea932-6af7-4180-8430-7a527f4e430f, da6b0af4-cca7-49b1-8bdd-da35aaba58a9,
+                       9867045b-d36c-49f0-accd-ab54fdc008b7, dea52100-39f4-4a4b-aecb-0a990ff99a58…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 14
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+PS>TerminatingError(Get-PnPConnection): "The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect."
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:86:9
+Line |
+  86 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect.
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:86:9
+Line |
+  86 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline
+     | commands which uses the -Url argument to connect.
+
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1407379456.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1412086977.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/898-Correos_
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1412086977.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1415521155.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+Plantilla exportada a archivo temporal
+Conectando al sitio concentrador: https://grupoplexus.sharepoint.com/sites/wiki
+Obteniendo sitios asociados...
+Sitios asociados encontrados: 4
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/898-Correos_
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Sitio asociado: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1226-AguasdeCoruaEMALCSA
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/898-Correos_
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/898-Correos_
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+La plantilla ya existe en la raíz de SitePages de https://grupoplexus.sharepoint.com/sites/1388_HospitalUniversitarioSantJoandeReus
+Procesando sitio: https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Plantilla añadida a https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+
+PageTitle            : Plantilla Centralizada
+Sections             : {, , , …}
+Controls             : {27779cf4-e022-4106-9809-0e7fa211cd02, 21fc636f-a950-4ce5-be9b-47b74c2c95b6,
+                       39d1c260-62d9-4021-b95e-960bf480803b, 99ed20b3-dbf2-4bae-b500-504881b3ab08…}
+HeaderControls       : {}
+LayoutType           : Home
+ThumbnailUrl         : 
+KeepDefaultWebParts  : False
+DefaultSection       : PnP.Core.Model.SharePoint.CanvasSection
+Folder               : Templates
+Name                 : PlantillaCentralizada.aspx
+ScheduledPublishDate : 
+EditorType           : CK4
+PageHeader           : PnP.Core.Model.SharePoint.PageHeader
+PageId               : 40
+SpaceContent         : 
+EntityId             : 
+EntityRelations      : 
+EntityType           : 
+RepostSourceUrl      : 
+RepostDescription    : 
+RepostSourceSiteId   : 00000000-0000-0000-0000-000000000000
+RepostSourceWebId    : 00000000-0000-0000-0000-000000000000
+RepostSourceListId   : 00000000-0000-0000-0000-000000000000
+RepostSourceItemId   : 00000000-0000-0000-0000-000000000000
+PnPContext           : PnP.Core.Services.PnPContext
+PagesLibrary         : PnP.Core.Model.SharePoint.List
+PageListItem         : PnP.Core.Model.SharePoint.ListItem
+
+Página promovida como plantilla en https://grupoplexus.sharepoint.com/sites/884-MutuaGallega
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1415521155.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="get-date"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Date                                           7.0.0.0    Microsoft.PowerShell.Util…
+
+PS>CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Date"
+>> ParameterBinding(Get-Help): name="Online"; value="False"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+
+NAME
+    Get-Date
+
+SYNTAX
+    Get-Date [[-Date] <datetime>] [-Year <int>] [-Month <int>] [-Day <int>] [-Hour <int>] [-Minute
+    <int>] [-Second <int>] [-Millisecond <int>] [-DisplayHint {Date | Time | DateTime}] [-Format
+    <string>] [-AsUTC] [<CommonParameters>]
+
+    Get-Date [[-Date] <datetime>] -UFormat <string> [-Year <int>] [-Month <int>] [-Day <int>] [-Hour
+    <int>] [-Minute <int>] [-Second <int>] [-Millisecond <int>] [-DisplayHint {Date | Time | DateTime}]
+    [-AsUTC] [<CommonParameters>]
+
+    Get-Date -UnixTimeSeconds <long> [-Year <int>] [-Month <int>] [-Day <int>] [-Hour <int>] [-Minute
+    <int>] [-Second <int>] [-Millisecond <int>] [-DisplayHint {Date | Time | DateTime}] [-Format
+    <string>] [-AsUTC] [<CommonParameters>]
+
+    Get-Date -UnixTimeSeconds <long> -UFormat <string> [-Year <int>] [-Month <int>] [-Day <int>] [-Hour
+    <int>] [-Minute <int>] [-Second <int>] [-Millisecond <int>] [-DisplayHint {Date | Time | DateTime}]
+    [-AsUTC] [<CommonParameters>]
+
+
+ALIASES
+    None
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial
+    help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Get-Date -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkID=2096615.
+
+
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B
+PS>. 'C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1'
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1424484219.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+WARNING: As of September 9th, 2024 the option to use the PnP Management Shell app registration for authentication is not available anymore. Refer to https://pnp.github.io/powershell/articles/registerapplication.html on how to register your own application.
+>> TerminatingError(Connect-PnPOnline): "Specified method is not supported."
+Se produjo un error: Specified method is not supported.
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 21
+at <ScriptBlock>, <No file>: line 1
+PS>TerminatingError(Get-PnPConnection): "The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect."
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:92:9
+Line |
+  92 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect.
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:92:9
+Line |
+  92 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline
+     | commands which uses the -Url argument to connect.
+
+Transcript stopped, output file is C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\logs\add_spopagetemplates_20241015T1424484219.txt
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cvictor.jimenezvaquer\x5cDocuments\x5cPlexusTech\x5capp-ENRIQUE\x5cPowerShell\x5cPowerShellCreadorDePaginasPS C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas> ]633;B

@@ -1,0 +1,66 @@
+**********************
+PowerShell transcript start
+Start time: 20241015142504
+Username: PLEXUS\victor.jimenezvaquer
+RunAs User: PLEXUS\victor.jimenezvaquer
+Configuration Name: 
+Machine: PLX10520-028 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2024.2.2' -BundledModulesPath 'c:\Users\victor.jimenezvaquer\.cursor\extensions\ms-vscode.powershell-2024.2.2\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2024.2.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\logs\1728985320-b7bd9115-5105-4ca6-91c3-fb2b19d101811728985308299' -SessionDetailsPath 'c:\Users\victor.jimenezvaquer\AppData\Roaming\Cursor\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-12764-972139.json' -FeatureFlags @() 
+Process ID: 15780
+PSVersion: 7.4.5
+PSEdition: Core
+GitCommitId: 7.4.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\add_spopagetemplates_20241015T1425049085.txt
+Conectando al sitio de la plantilla: https://grupoplexus.sharepoint.com/sites/TemplateWIKI2
+WARNING: 
+A newer version of PnP PowerShell is available: 2.99.13-nightly.
+
+Use 'Update-Module -Name PnP.PowerShell' to update.
+Use 'Get-PnPChangeLog -Release 2.99.13-nightly' to list changes.
+
+You can turn this check off by setting the 'PNPPOWERSHELL_UPDATECHECK' environment variable to 'Off'.
+WARNING: As of September 9th, 2024 the option to use the PnP Management Shell app registration for authentication is not available anymore. Refer to https://pnp.github.io/powershell/articles/registerapplication.html on how to register your own application.
+>> TerminatingError(Connect-PnPOnline): "Specified method is not supported."
+Se produjo un error: Specified method is not supported.
+StackTrace: at <ScriptBlock>, C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1: line 21
+at <ScriptBlock>, <No file>: line 1
+PS>TerminatingError(Get-PnPConnection): "The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect."
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:92:9
+Line |
+  92 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses the -Url argument to connect.
+Get-PnPConnection: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:92:9
+Line |
+  92 |      if (Get-PnPConnection) {
+     |          ~~~~~~~~~~~~~~~~~
+     | The current connection holds no SharePoint context. Please use one of the Connect-PnPOnline commands which uses
+     | the -Url argument to connect.
+
+Test-Path: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:96:9
+Line |
+  96 |      if (Test-Path $TempFile) {
+     |          ~~~~~~~~~~~~~~~~~~~
+     | Value cannot be null. (Parameter 'The provided Path argument was null or an empty collection.')
+Test-Path: C:\Users\victor.jimenezvaquer\Documents\PlexusTech\app-ENRIQUE\PowerShell\PowerShellCreadorDePaginas\.vscode\ps1EnUso\AñadirPlantillaDePagina.ps1:96:9
+Line |
+  96 |      if (Test-Path $TempFile) {
+     |          ~~~~~~~~~~~~~~~~~~~
+     | Value cannot be null. (Parameter 'The provided Path argument was null or an empty collection.')
+
+**********************
+PowerShell transcript end
+End time: 20241015142507
+**********************
