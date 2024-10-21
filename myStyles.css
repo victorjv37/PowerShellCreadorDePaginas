@@ -1,0 +1,17 @@
+div {
+  font-size: 16px !important;
+}
+div p {
+  font-size: 16px !important;
+}
+div table {
+  width: 100% !important;
+  table-layout: auto !important;
+  border-collapse: collapse !important;
+}
+div td,
+div th {
+  word-wrap: break-word !important;
+  padding: 8px !important;
+  border: 1px solid black !important;
+}
