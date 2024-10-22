@@ -1,0 +1,191 @@
+<body>
+<section style="margin: 20px 0; padding: 15px; border: 1px solid #e3e3e3; border-radius: 4px;">
+<div style="margin-top: 10px;">
+<p><i class="bs-callout-icon fa fa-sitemap"></i></p>
+<h3 style="font-size: 1.2em;">ECOSISTEMA QUENDA ON PREMISE</h3>
+<p><br/>
+ EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ecosistema Quenda On Premise&quot;,&quot;hid&quot;:&quot;ecosistema_quenda_on_premise&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;130-257&quot;}</p>
+<h3 style="font-size: 1.2em;">Ecosistema On Premise</h3>
+<p></p>
+<p>
+&lt;callout title=“ECOSISTEMA ON PREMISE” type=“primary” icon= “fa fa-sitemap”&gt;
+<br/>
+</p>
+<p></p>
+<p>
+<strong>Responsables del Proyecto</strong>
+</p>
+<p></p>
+<pre style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 10px; border-radius: 4px; overflow-x: auto;">
+JP:                                Marta Arias Trillo <marta.ariastrillo@plexus.es> teléfono 674 851 943
+Team Leader del Proyecto:          Pablo Nebot del Busto, <pablo.nebotdelbusto@plexus.es> teléfono 698 198 135
+Servicew Delivery Manager (SDM):   Armando Loureiro López, <armando.loureirolopez@plexus.es> teléfono 673 664 086
+</pre>
+<p></p>
+<p>
+<br/>
+<br/>
+</p>
+<p></p>
+<p>
+<strong>Instalación en Eclipse (Entorno de desarrollo)</strong>
+</p>
+<p></p>
+<pre style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 10px; border-radius: 4px; overflow-x: auto;">
+Configuración del proyecto QuendaCloud en Eclipse: 
+ - Windows >> Preferences >> Java >> Installed JREs >> Add JDK 1.8
+ - Windows >> Preferences >> Server >> Runtime Environments >> Add Tomcat 8.5
+ - proyecto quenda >> properties >> Project Facets >> Dynamic Web Module: 2.5, Java: 1.8, JavaScript: 1.0. Runtimes: apache Tomcat 8.5
+ - proyecto quenda >> properties >> Deployment Assembly
+</pre>
+<p></p>
+<p>
+<a class="media" href="/lib/exe/detail.php?id=1704_236_097_desarrollo_plantilla_quendaonpremise&amp;media=236-telefonica:deployment_assembly.png" title="236-telefonica:deployment_assembly.png"><img alt="" class="media" loading="lazy" src="/lib/exe/fetch.php?w=400&amp;tok=5fb0e0&amp;media=236-telefonica:deployment_assembly.png" width="400"/></a>
+</p>
+<p></p>
+<pre style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 10px; border-radius: 4px; overflow-x: auto;">
+* Instalación Quenda:
+ - Descargar el código fuente (ruta: https://repo.plexus.services/031-040_multicliente_producto/quenda/), acceder a la carpeta branches/develop, pestaña code y copiamos la url de Clone with HTPPS y la clonamos desde el git. 
+   Preguntar al Team Leader cualquier duda.
+ - Revisar que el proyecto quenda importado tengan la JDK y versión correcta. Esto se verifica pinchando en el botón derecho sobre el proyecto --> properties --> java build path --> libraries: JavaSE-1.8 Y properties --> java compiler: 1.8
+- Hacemos un project clean del proyecto quenda y si no se queda limpio, en los casos de los que den error de librerías hay que buscar en el proyecto a ver si están ahí, Si no están, solicitarlos a algún compañero del equipo 
+  para que os lo pase.
+- Una vez añadido la configuración hacer un project clean del proyecto quenda.
+- Recordar después de hacer esos cambios, que quizás haya cambiado la versión que se está usando de java. Ir al Java Build Path y comprobar.
+- Se crea un nuevo servidor Tomcat 8.5 en el Eclipse, se añaden el proyecto al servidor y se reinicia.
+- Si todo ha ido bien se accede a la aplicación a través de la ruta: http://localhost:8080/quenda/
+</pre>
+<p></p>
+<p>
+<br/>
+</p>
+<p></p>
+<p>
+<br/>
+<strong>Entorno de Desarrollo</strong>
+</p>
+<p></p>
+<pre style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 10px; border-radius: 4px; overflow-x: auto;">
+Código Fuente : https://repo.plexus.services/031-040_multicliente_producto/quenda/                       
+Versión de Java : 1.8
+Servidor y versión de aplicación: Tomcat 8.5
+Base de datos: 
+   - Servidor de base de datos: MySQL
+   - Versión de servidor de base de datos: MySQL
+   - Ruta de ubicación en desarrollo (IP, Puerto, Nombre): 
+     * IP: 192.168.110.190
+     * Puerto: 3306
+     * Usuario: quenda
+     * Contraseña: Pedir al TeamLeader/equipo.
+</pre>
+<p></p>
+<p>
+<strong>Entorno de QA</strong> <br/>
+</p>
+<p><ol>
+<li class="level1"><div class="li"> Código Fuente :  <a class="urlextern" href="https://repo.plexus.services/031-040_multicliente_producto/quenda/" rel="ugc nofollow" title="https://repo.plexus.services/031-040_multicliente_producto/quenda/">https://repo.plexus.services/031-040_multicliente_producto/quenda/</a> </div>
+</li>
+<li class="level1"><div class="li"> Versión de Java : 1.8</div>
+</li>
+<li class="level1"><div class="li"> Servidor y versión de aplicación: (Nombre del servidor y versión de aplicación)</div>
+</li>
+</ol></p>
+<ul>
+<li>máquina: 77.26.24.42 / 2224</li>
+<li>usuario:root</li>
+<li>Contraseña: Pedir al TeamLeader/equipo.</li>
+</ul>
+<p></p>
+<p>
+  Base de datos:
+</p>
+<p><ol>
+<li class="level1"><div class="li"> Servidor de base de datos: MariaDB</div>
+</li>
+<li class="level2"><div class="li"> Versión de servidor de base de datos: MariaDB</div>
+</li>
+<li class="level2 node"><div class="li"> Ruta de ubicación en desarrollo (IP, Puerto, Nombre): </div>
+<ul>
+<li class="level3"><div class="li"> ServerHost: localhost</div>
+</li>
+<li class="level3"><div class="li"> Puerto: 3306</div>
+</li>
+<li class="level3"><div class="li"> Database: quendapro</div>
+</li>
+<li class="level3"><div class="li"> Usuario: quenda</div>
+</li>
+<li class="level3"><div class="li"> Contraseña: Pedir al TeamLeader/equipo.</div>
+</li>
+<li class="level3"><div class="li"> SSH: 77.26.24.42/2226; root / Pedir al TeamLeader/equipo la contraseña.  </div>
+</li>
+</ul>
+</li>
+</ol></p>
+<p>
+<br/>
+</p>
+<p></p>
+<p>
+<strong>Entorno de Formación</strong> <br/>
+</p>
+<p><ol>
+<li class="level1"><div class="li"> Código Fuente :  <a class="urlextern" href="https://repo.plexus.services/031-040_multicliente_producto/quenda/" rel="ugc nofollow" title="https://repo.plexus.services/031-040_multicliente_producto/quenda/">https://repo.plexus.services/031-040_multicliente_producto/quenda/</a> </div>
+</li>
+<li class="level1"><div class="li"> Versión de Java : 1.8</div>
+</li>
+<li class="level1"><div class="li"> Servidor y versión de aplicación: (Nombre del servidor y versión de aplicación)</div>
+</li>
+</ol></p>
+<ul>
+<li>máquina: 77.26.24.42 / 2227</li>
+<li>usuario:root</li>
+<li>Contraseña: Pedir al TeamLeader/equipo.</li>
+</ul>
+<p></p>
+<p>
+  Base de datos:
+</p>
+<p><ol>
+<li class="level1"><div class="li"> Servidor de base de datos: MariaDB</div>
+</li>
+<li class="level2"><div class="li"> Versión de servidor de base de datos: MariaDB</div>
+</li>
+<li class="level2 node"><div class="li"> Ruta de ubicación en desarrollo (IP, Puerto, Nombre): </div>
+<ul>
+<li class="level3"><div class="li"> ServerHost: localhost</div>
+</li>
+<li class="level3"><div class="li"> Puerto: 3306</div>
+</li>
+<li class="level3"><div class="li"> Database: quendaform</div>
+</li>
+<li class="level3"><div class="li"> Usuario: quenda</div>
+</li>
+<li class="level3"><div class="li"> Contraseña: Pedir al TeamLeader/equipo.</div>
+</li>
+<li class="level3"><div class="li"> SSH: 77.26.24.42/2226; root / Pedir al TeamLeader/equipo la contraseña.<br/>
+</div>
+</li>
+</ul>
+</li>
+</ol></p>
+<p>
+<strong>Procedimiento de despliegue de versiones</strong> <br/>
+</p>
+<p></p>
+<pre style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 10px; border-radius: 4px; overflow-x: auto;">
+¿Quién despliega?
+   Normalmente despliegan el Teamleader/equipo que pertenezca el cliente, en este caso, Movistar.
+¿Dónde están las rutas de despliegue?
+   QA: http://77.26.24.42:8012/manager/html
+   FORM: http://77.26.24.42:8127/manager/html
+¿Cómo se despliega?
+   Antes del despliegue se saca una copia del war de quenda, citaprevia, etc según el que vayas a desplegar de la maquina del entorno. Se compara los parámetros del nuevo war con el war actual.
+   Entornos de QA y FORM entrando al manager de cada entorno
+¿A quién se le solicita el despliegue?
+   Solicitud del Teamleader y mutuo acuerdo los equipos de todos los clientes que estén en el quenda cloud.
+</pre>
+<p></p>
+</div>
+</section>
+<img src="/lib/exe/fetch.php?w=400&tok=5fb0e0&media=236-telefonica:deployment_assembly.png" alt="" style="max-width: 100%; height: auto; margin: 10px 0;">
+</body>
